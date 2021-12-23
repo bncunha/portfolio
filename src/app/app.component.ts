@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { projects } from 'src/assets/projects';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
+  @ViewChild('aboutSection') about!: ElementRef;
+  projects = projects;
+
+  scrollDown() {
+    this.about.nativeElement.scrollIntoView({behavior: 'smooth'})
+  }
 }

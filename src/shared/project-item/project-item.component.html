@@ -1,0 +1,22 @@
+<div class="project">
+  <div class="project__image-wrapper">
+    <img class="project__image" [src]="'/assets/projects/'+project.image" [alt]="project.name"/>
+  </div>
+  <div class="project__name">
+    {{ project.name }}
+  </div>
+  <div class="project__tecs">
+    <img *ngFor="let tech of project.techs"class="project__tec-item" [src]="tech.image" [alt]="tech.alt" [title]="tech.alt">
+  </div>
+  <div class="project__description">
+    {{ project.description }}
+  </div>
+  <div class="project__links">
+    <a *ngIf="project.github" [href]="project.github" target="_blank">
+      <img class="project__link-img" src="/assets/techs/github.png" alt="GitHub"/>
+    </a>
+    <a *ngIf="project.demo" [href]="project.demo" target="_blank">
+      <img class="project__link-img" src="/assets/techs/internet.png" alt="Internet"/>
+    </a>
+  </div>
+</div>

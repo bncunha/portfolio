@@ -1,1 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import 'variables';
 /* You can add global styles to this file, and also import other style files */
+
+
+body {
+  background-color: $bgk-color;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}

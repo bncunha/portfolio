@@ -1,0 +1,162 @@
+@import 'variables';
+
+h2 {
+  text-align: center;
+  color: $terciary-color;
+  font-weight: 800;
+  width: 100%;
+  margin-top: 0;
+}
+
+.channels {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 19px;
+  padding: 15px;
+  box-sizing: border-box;
+  align-items: baseline;
+  background-color: $bgk-color;
+  img {
+    height: 25px;
+  }
+}
+
+.container {
+  padding: 40px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  column-gap: 60px;
+  line-height: 20px;
+  align-items: center;
+}
+
+.introduction {
+  padding: 20px;
+  height: 100vh;
+
+  .btn-down {
+    background: transparent;
+    border: none;
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    animation: jump 3s infinite;
+
+    @keyframes jump {
+      25% {
+        transform: translateY(10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  }
+  .title {
+    padding-top: 35vh;
+    color: #fff;
+    max-width: 510px;
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+  }
+
+  .resume {
+    text-align: center;
+    margin: auto;
+    margin-top: 13px;
+    color: #FEC260;
+    font-size: 18px;
+  }
+
+  .highlight {
+    position: relative;
+  }
+
+  .highlight::after {
+    content: "";
+    background-color: $terciary-color;
+    position: absolute;
+    z-index: -1;
+    border-radius: 5px;
+    animation: highlithEffect 1s alternate;
+    width: 120px;
+    height: 40px;
+    left: -5px;
+    bottom: 4px;
+
+    @keyframes highlithEffect {
+      0% {
+        width: 0;
+        height: 5px;
+      }
+
+      50% {
+        width: 120px;
+        height: 5px;
+      }
+
+      100% {
+        height: 40px;
+      }
+    }
+  }
+}
+
+.about {
+  // background-color: #fff;
+  border-top: 1px solid #fff;
+
+  .about__left {
+    flex: 1;
+  }
+
+  .about__right {
+    flex: 1 1 640px;
+    line-height: 25px;
+    text-align: justify;
+    color: #fff;
+  }
+
+  .about__image {
+    max-width: 200px;
+    border-radius: 100%;
+    margin: auto;
+    display: block;
+  }
+
+  .about__lista {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    color: $hilight-color;
+    width: 100%;
+  }
+}
+
+.projects {
+  // background-color: #fff;
+  border-top: 1px solid #fff;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  app-project-item {
+    flex: 0 1 285px;
+    transition: all 0.5s ease;
+  }
+
+  app-project-item:hover {
+    transform: translateY(-5px);
+  }
+}
